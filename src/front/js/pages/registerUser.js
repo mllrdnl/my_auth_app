@@ -8,6 +8,15 @@ export function RegisterUser() {
 	const { store, actions } = React.useContext(Context);
 	const history = useHistory();
 
+	React.useEffect(
+		() => {
+			if (store.authToken) {
+				history.push("/loginUser");
+			}
+		},
+		[store.authToken]
+	);
+
 	return (
 		<div className="container">
 			<div className="form-floating mb-3">
