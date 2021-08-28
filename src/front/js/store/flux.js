@@ -41,6 +41,31 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 				//reset the global store
 				setStore({ demo: demo });
+			},
+
+			logout: () => {
+				setStore({ authToken: null });
+			},
+
+			loginUser: (email, password) => {
+				fetch(process.env.BACKEND_URL + "/api/login", {
+					method: "POST",
+					mode: "cors",
+					body: JSON.stringify({ email, password }),
+					headers: {
+						"Content-Type": "application/json"
+					}
+				})
+					.then(resp => {
+						if (resp.status !== 200) {
+							throw new Error();
+						}
+
+						return resp.json();
+					})
+
+					.then(data => setStore({ authToken: data.token, authError: null }))
+					.catch(error => setStore({ authToken: null, authError: error }));
 			}
 		}
 	};
