@@ -14,7 +14,7 @@ export function SecurePage(props) {
 		},
 		[store.authToken]
 	);
-	return <>(props.children)</>;
+	return <>{props.children}</>;
 }
 
 // React.Fragment

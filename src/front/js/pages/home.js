@@ -8,17 +8,16 @@ export const Home = () => {
 
 	return (
 		<div className="text-center mt-5">
-			<h1>Hello Rigo!</h1>
-			<p>
-				<img src={rigoImageUrl} />
-			</p>
+			<h1>New User?</h1>
+			<a type="button" className="btn btn-primary" href="/register">
+				Register Here!
+			</a>
+
+			<h3>Returning User</h3>
+			<a type="button" className="btn btn-outline-primary" href="/login">
+				Login Here!
+			</a>
 			<div className="alert alert-info">{store.message || "Loading message from the backend..."}</div>
-			<p>
-				This boilerplate comes with lots of documentation:{" "}
-				<a href="https://github.com/4GeeksAcademy/react-flask-hello/tree/95e0540bd1422249c3004f149825285118594325/docs">
-					Read documentation
-				</a>
-			</p>
 		</div>
 	);
 };
