@@ -1,0 +1,29 @@
+body {
+    background: linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.15) 100%), radial-gradient(at top center, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.40) 120%) #26333a;
+    background-blend-mode: multiply,multiply;
+}
+
+/* #989898 */
+
+h1 {
+    font-family: 'Molle', cursive;
+    color: #90A4AE;
+}
+
+#register {
+    background-color: #37474F;
+    padding: 14px;
+    border-style: solid;
+    border-width: 6px;
+    border-radius: 25px;
+    border-color: #607D8B
+}
+
+#login {
+    background-color: #37474F;
+    padding: 14px;
+    border-style: solid;
+    border-width: 6px;
+    border-radius: 25px;
+    border-color: #607D8B
+}
