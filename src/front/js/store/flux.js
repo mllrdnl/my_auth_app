@@ -78,14 +78,14 @@ const getState = ({ getStore, getActions, setStore }) => {
 					}
 				})
 					.then(resp => {
-						if (resp.status !== 200) {
-							throw new Error();
+						if (resp.status !== 204) {
+							throw new Error("register-error");
 						}
 
-						return resp.json();
+						getActions().loginUser(email, password);
 					})
 
-					.then(data => setStore({ authToken: data.token, authError: null }))
+					// .then(data => setStore({ authToken: data.token, authError: null }))
 					.catch(error => setStore({ authToken: null, authError: error }));
 			}
 		}

@@ -11,7 +11,7 @@ export function RegisterUser() {
 	React.useEffect(
 		() => {
 			if (store.authToken) {
-				history.push("/loginUser");
+				history.push("/dashboard");
 			}
 		},
 		[store.authToken]
